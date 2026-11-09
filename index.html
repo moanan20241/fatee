@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Fateeee 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ffe5ed,#fbd0df,#fff0e7);
+  font-family:'Quicksand',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  overflow-x:hidden;
+  color:#82455f;
+}
+
+.heart{
+  position:fixed;
+  bottom:-30px;
+  color:#ed83ae;
+  opacity:.6;
+  pointer-events:none;
+  animation:float 8s linear infinite;
+  z-index:0;
+}
+
+@keyframes float{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  15%{opacity:.6}
+  100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+
+.window{
+  width:100%;
+  max-width:400px;
+  background:#fffaf2;
+  border:2px solid #67364b;
+  box-shadow:7px 8px 0 #d99ab0;
+  position:relative;
+  z-index:2;
+  animation:appear .6s ease;
+}
+
+@keyframes appear{
+  from{opacity:0;transform:scale(.85)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.hidden{
+  display:none!important;
+}
+
+.bar{
+  height:30px;
+  background:#f36a9e;
+  border-bottom:2px solid #67364b;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 10px;
+  color:#542a3d;
+  font-size:11px;
+  font-weight:700;
+}
+
+.dots{
+  display:flex;
+  gap:5px;
+}
+
+.dots i{
+  height:8px;
+  width:8px;
+  background:#ffc1d5;
+  border:1px solid #67364b;
+}
+
+.content{
+  padding:25px 18px;
+  text-align:center;
+  min-height:300px;
+}
+
+h1{
+  font-family:'Pacifico',cursive;
+  font-weight:400;
+  font-size:25px;
+  color:#e95796;
+  line-height:1.5;
+}
+
+p{
+  font-size:13px;
+  line-height:1.8;
+  margin-top:10px;
+}
+
+.date{
+  display:inline-block;
+  background:#ffe0eb;
+  border:1px solid #e98caf;
+  padding:7px 17px;
+  border-radius:20px;
+  margin-top:12px;
+  font-size:12px;
+  font-weight:700;
+  color:#b63e73;
+}
+
+button{
+  background:#f36a9e;
+  border:2px solid #67364b;
+  color:white;
+  padding:11px 22px;
+  font-family:inherit;
+  font-weight:700;
+  font-size:12px;
+  cursor:pointer;
+  box-shadow:3px 4px 0 #67364b;
+  margin-top:20px;
+  transition:.2s;
+}
+
+button:hover{
+  transform:translateY(-3px);
+}
+
+button:active{
+  transform:translateY(2px);
+  box-shadow:1px 2px 0 #67364b;
+}
+
+/* EQUAL CURTAIN */
+
+.curtain{
+  height:210px;
+  margin:20px auto;
+  position:relative;
+  overflow:hidden;
+  background:#f5a1c4;
+  border-top:6px solid #f5a5c4;
+  box-shadow:inset 0 0 15px #76254d;
+}
+
+.curtain-panel{
+  position:absolute;
+  top:0;
+  width:50%;
+  height:100%;
+  background:repeating-linear-gradient(
+    90deg,
+    #b83c77 0px,
+    #e66b9f 18px,
+    #ad306d 36px
+  );
+  box-shadow:inset 0 0 15px #76254d;
+  z-index:2;
+}
+
+.curtain-left{
+  left:0;
+  border-right:2px solid #76254d;
+}
+
+.curtain-right{
+  right:0;
+  border-left:2px solid #76254d;
+}
+
+.cord{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:4px;
+  height:125px;
+  background:#ffe2a0;
+  transform:translateX(-50%);
+  z-index:3;
+}
+
+.lock{
+  position:absolute;
+  top:75px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:42px;
+  z-index:4;
+}
+
+.curtain.open .curtain-left{
+  animation:leftOpen 1.5s forwards;
+}
+
+.curtain.open .curtain-right{
+  animation:rightOpen 1.5s forwards;
+}
+
+@keyframes leftOpen{
+  to{transform:translateX(-100%)}
+}
+
+@keyframes rightOpen{
+  to{transform:translateX(100%)}
+}
+
+/* LOADING */
+
+.progress-bg{
+  height:10px;
+  background:#f7d2df;
+  margin-top:20px;
+}
+
+#progress{
+  height:100%;
+  width:0;
+  background:#ed5d9a;
+  transition:.1s;
+}
+
+/* CAKE */
+
+.cake{
+  font-size:90px;
+  margin:20px;
+  animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+  50%{transform:translateY(-10px)}
+}
+
+/* GALLERY */
+
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:20px;
+}
+
+.photo{
+  background:#f8d4e1;
+  border:2px solid #67364b;
+  padding:5px;
+  transform:rotate(-2deg);
+}
+
+.photo:nth-child(even){
+  transform:rotate(2deg);
+}
+
+.photo img{
+  width:100%;
+  height:125px;
+  object-fit:cover;
+  display:block;
+  background:#f5b9d0;
+}
+
+.photo span{
+  display:block;
+  padding:7px 0 3px;
+  font-size:10px;
+  font-weight:700;
+}
+
+/* LETTER */
+
+.letter{
+  background:#fffdf4;
+  border:1px solid #ad8192;
+  padding:16px;
+  text-align:left;
+  font-size:12px;
+  line-height:2;
+  min-height:190px;
+  white-space:pre-wrap;
+  margin-top:15px;
+  color:#70435a;
+}
+
+/* FINAL */
+
+.final-heart{
+  font-size:70px;
+  animation:bounce 1.5s infinite;
+  margin:15px;
+}
+
+.credit{
+  font-size:10px;
+  color:#b77b94;
+  margin-top:25px;
+  letter-spacing:.5px;
+}
+
+@media(max-width:380px){
+  h1{font-size:22px}
+  .content{padding:20px 12px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<!-- SCREEN 1: WELCOME -->
+
+<div class="window" id="screen1">
+
+  <div class="bar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <span>BIRTHDAY SURPRISE.EXE</span>
+    <span>×</span>
+  </div>
+
+  <div class="content">
+
+    <h1>A Little Surprise 🎀</h1>
+
+    <p>Hey Fateeee! Someone has prepared a little surprise for you.</p>
+
+    <div class="date">🎂 10 November</div>
+
+    <div class="curtain" id="curtain">
+
+      <div class="curtain-panel curtain-left"></div>
+
+      <div class="curtain-panel curtain-right"></div>
+
+      <div class="cord"></div>
+
+      <div class="lock">🔒</div>
+
+    </div>
+
+    <p>Are you ready to open your surprise?</p>
+
+    <button onclick="unlock()">OPEN YOUR GIFT 🎁</button>
+
+  </div>
+</div>
+
+
+<!-- SCREEN 2: LOADING -->
+
+<div class="window hidden" id="screen2">
+
+  <div class="bar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <span>LOADING.EXE</span>
+    <span>×</span>
+  </div>
+
+  <div class="content">
+
+    <div style="font-size:65px">🎀🐻</div>
+
+    <h1>Preparing Surprise!</h1>
+
+    <p>Just a moment... Your birthday surprise is getting ready.</p>
+
+    <p id="loading">Loading 0%</p>
+
+    <div class="progress-bg">
+      <div id="progress"></div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- SCREEN 3: BIRTHDAY -->
+
+<div class="window hidden" id="screen3">
+
+  <div class="bar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <span>HAPPY BIRTHDAY.EXE</span>
+    <span>×</span>
+  </div>
+
+  <div class="content">
+
+    <h1>Happy Birthday Fateeee! 🎂</h1>
+
+    <div class="date">10 November 🎀</div>
+
+    <div class="cake">🎂</div>
+
+    <p>
+      Wishing you a day full of happiness,
+      laughter and beautiful moments!
+    </p>
+
+    <p>Enjoy your special day! 🎉</p>
+
+    <button onclick="showScreen(4)">NEXT →</button>
+
+  </div>
+</div>
+
+
+<!-- SCREEN 4: MEMORIES -->
+
+<div class="window hidden" id="screen4">
+
+  <div class="bar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <span>MEMORIES.EXE</span>
+    <span>×</span>
+  </div>
+
+  <div class="content">
+
+    <h1>Some Memories 🌸</h1>
+
+    <p>A few beautiful moments to remember.</p>
+
+    <div class="gallery">
+
+      <div class="photo">
+        <img src="photo1.jpg" alt="Memory 1">
+        <span>Beautiful Memory ❤️</span>
+      </div>
+
+      <div class="photo">
+        <img src="photo2.jpg" alt="Memory 2">
+        <span>Special Moment 🌷</span>
+      </div>
+
+      <div class="photo">
+        <img src="photo3.jpg" alt="Memory 3">
+        <span>Good Times 💗</span>
+      </div>
+
+      <div class="photo">
+        <img src="photo4.jpg" alt="Memory 4">
+        <span>Forever Memories ✨</span>
+      </div>
+
+    </div>
+
+    <button onclick="showScreen(5)">NEXT →</button>
+
+  </div>
+</div>
+
+
+<!-- SCREEN 5: LETTER INTRO -->
+
+<div class="window hidden" id="screen5">
+
+  <div class="bar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <span>LETTER.EXE</span>
+    <span>×</span>
+  </div>
+
+  <div class="content">
+
+    <h1>A Small Letter For You 💌</h1>
+
+    <p>There is a little birthday message waiting for you!</p>
+
+    <div style="font-size:80px;margin:20px;cursor:pointer" onclick="openLetter()">
+      💌
+    </div>
+
+    <button onclick="openLetter()">OPEN LETTER ❤️</button>
+
+  </div>
+</div>
+
+
+<!-- SCREEN 6: LETTER -->
+
+<div class="window hidden" id="screen6">
+
+  <div class="bar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <span>MESSAGE.TXT</span>
+    <span>×</span>
+  </div>
+
+  <div class="content">
+
+    <h1>For You, Fateeee 🌸</h1>
+
+    <div class="letter" id="letterText"></div>
+
+    <button onclick="showScreen(7)">ONE MORE THING →</button>
+
+  </div>
+</div>
+
+
+<!-- SCREEN 7: FINAL -->
+
+<div class="window hidden" id="screen7">
+
+  <div class="bar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <span>THE END.EXE</span>
+    <span>×</span>
+  </div>
+
+  <div class="content">
+
+    <div class="final-heart">🎉🎂🎈</div>
+
+    <h1>Happy Birthday Fateeee!</h1>
+
+    <p>
+      Have a wonderful day and an amazing year ahead.
+      Keep smiling and stay happy!
+    </p>
+
+    <h1 style="margin-top:20px">Best Wishes! 💗</h1>
+
+    <div class="credit">Made with ♡ by Lily</div>
+
+    <button onclick="showScreen(3)">WATCH AGAIN ↻</button>
+
+  </div>
+</div>
+
+
+<script>
+
+// FLOATING HEARTS
+
+const heartBox = document.getElementById("hearts");
+
+for(let i=0;i<25;i++){
+
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+
+  heart.innerHTML = ["♥","♡","💕","🌸","✨"][i%5];
+
+  heart.style.left = Math.random()*100+"%";
+
+  heart.style.fontSize = (15+Math.random()*20)+"px";
+
+  heart.style.animationDelay = Math.random()*8+"s";
+
+  heart.style.animationDuration = (5+Math.random()*6)+"s";
+
+  heartBox.appendChild(heart);
+}
+
+
+// SCREEN CHANGE
+
+function showScreen(number){
+
+  document.querySelectorAll(".window").forEach(screen=>{
+    screen.classList.add("hidden");
+  });
+
+  document.getElementById("screen"+number).classList.remove("hidden");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+// OPEN CURTAIN
+
+function unlock(){
+
+  const curtain = document.getElementById("curtain");
+
+  if(curtain.classList.contains("open")) return;
+
+  curtain.classList.add("open");
+
+  setTimeout(()=>{
+    showScreen(2);
+    startLoading();
+  },1500);
+
+}
+
+
+// LOADING ANIMATION
+
+function startLoading(){
+
+  let value = 0;
+
+  const progress = document.getElementById("progress");
+
+  const label = document.getElementById("loading");
+
+  const timer = setInterval(()=>{
+
+    value += 2;
+
+    progress.style.width = value+"%";
+
+    label.textContent = "Loading "+value+"%";
+
+    if(value>=100){
+
+      clearInterval(timer);
+
+      setTimeout(()=>{
+        showScreen(3);
+      },500);
+
+    }
+
+  },40);
+
+}
+
+
+// BIRTHDAY LETTER
+
+const message = `Dear Fateeee,
+
+Happy Birthday! 🎂
+
+Hope your special day is filled with happiness, fun and lots of beautiful memories.
+
+May all your dreams come true. Keep smiling and enjoy every moment of your life.
+
+Stay happy, stay blessed and keep being awesome!
+
+Once again, Happy Birthday, Fateeee! 🎉
+
+Best Wishes ❤️`;
+
+
+// OPEN LETTER
+
+let typingTimer;
+
+function openLetter(){
+
+  showScreen(6);
+
+  const box = document.getElementById("letterText");
+
+  box.textContent = "";
+
+  clearInterval(typingTimer);
+
+  let i = 0;
+
+  typingTimer = setInterval(()=>{
+
+    box.textContent += message.charAt(i);
+
+    i++;
+
+    if(i>=message.length){
+
+      clearInterval(typingTimer);
+
+    }
+
+  },25);
+
+}
+
+</script>
+
+</body>
+</html>
